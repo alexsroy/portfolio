@@ -1,0 +1,211 @@
+.projects {
+  background: transparent;
+  padding: 40px 20px;
+}
+
+.projects h2 {    
+  font-family: 'BBH Hegarty';
+  font-weight: 100;
+  letter-spacing: 2px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--soft-mint);
+  opacity: 82%;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: rgba(30, 60, 50, 0.85);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 1. Show overlay whenever hovering over the CARD (instead of just project-image) */
+.project-card:hover .project-image {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Make project-image relative so overlay positions cleanly inside it */
+.project-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Blurs ONLY the image thumbnail when hovering over the container */
+.project-image:hover img {
+  filter: blur(4px);
+  transform: scale(1.03); /* Subtle zoom effect */
+}
+
+/* Semi-transparent dark overlay instead of screen backdrop blur */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Prevents interference when hovering out */
+}
+
+.project-image:hover .project-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-links {
+  display: flex;
+  gap: 25px;
+  /* Removed 0.1s transition delay that caused flickering */
+  transition: transform 0.3s ease; 
+}
+
+.project-link {
+  width: 55px;
+  height: 55px;
+  /* Updated from pure white to mint accent color */
+  background-color: white; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Dark forest green for the icon stroke/fill for high contrast */
+  color: var(--primary-color); 
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-link:hover {
+  /* Shifts to a brighter mint highlight on hover */
+  background-color: var(--soft-mint); 
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.project-link svg {
+  pointer-events: none;
+}
+
+.project-info {
+  padding: 10px 10px 10px 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.project-info h3 {
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--text-primary), rgba(255, 255, 255, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.project-info p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-tag {
+  padding: 8px 12px;
+
+  /* Very subtle shift from the project card's rgb(30, 60, 50) */
+  background: linear-gradient(
+    135deg,
+    rgba(52, 82, 67, 0.9),
+    rgba(48, 78, 64, 0.9)
+  );
+
+  border: 1px solid rgba(83, 115, 94, 0.35);
+  border-radius: 20px;
+
+  font-size: 0.85rem;
+  color: #689c6f;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(55, 86, 67, 0.92),
+    rgba(50, 82, 68, 0.92)
+  );
+    
+
+  border-color: rgba(87, 119, 96, 0.437);
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-info {
+    padding: 20px;
+  }
+  
+  .project-info h3 {
+    font-size: 1.4rem;
+  }
+  
+  .project-image {
+    height: 200px;
+  }
+}

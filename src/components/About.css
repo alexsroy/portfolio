@@ -1,0 +1,33 @@
+/* Ensure the section container spans full width and centers contents */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.about-text {
+  max-width: 800px;
+  text-align: center; /* Centers inline text lines */
+  color: #ffffff;
+  margin: 0 auto;    /* Centers the element box itself horizontally */
+}
+
+.about-text p, span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.about-text a {
+  color: var(--light-bg);
+}
