@@ -38,7 +38,7 @@ function Projects() {
       technologies: ['React Native', 'Expo Go', 'Express'],
       image: reachHFXImg,
       github:
-        'https://github.com/alexsroy/reach_hfx_frontent',
+        'https://github.com/alexsroy/reach_hfx_frontend',
       demo:
         'https://reachhfx.vercel.app/',
     },
