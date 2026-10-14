@@ -1,5 +1,6 @@
 {
   "name": "portfolio",
+  "homepage": "https://alexsroy.github.io/portfolio",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -16,13 +17,14 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.1.1"
   },
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "dev": "vite"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [

@@ -1,5 +1,9 @@
 
 import React, { useState } from 'react';
+import dalMicrowaveImg from '/images/dalMicrowave.png';
+import dalMastImg from '/images/dalMast.png';
+import reachHFXImg from '/images/reachHFX.png';
+
 import './Projects.css';
 
 function Projects() {
@@ -12,7 +16,7 @@ function Projects() {
       description:
         'Interactive Map of all microwaves on Dalhousie campus with the ability to leave reviews on experience with the appliances',
       technologies: ['React', 'Django', 'PostgreSQL'],
-      image: '/images/dalMicrowave.png',
+      image: dalMicrowaveImg,
       demo: 'https://dalmicrowave.ca',
     },
     {
@@ -22,8 +26,8 @@ function Projects() {
       description:
         'ROS 2 runner and simulation for the Marine Autonomous Sailing Team. Built in Python to plot course and control sail trim and rudder angle',
       technologies: ['Python', 'ROS 2'],
-      image: '/images/dalMast.png',
-      github: 'https://github.com/oxanuragofficial/my-portfolio',
+      image: dalMastImg,
+      github: 'https://github.com/alexsroy/DAL_MAST',
     },
     {
       id: 3,
@@ -32,9 +36,11 @@ function Projects() {
       description:
         'Real time halifax transit app for iOS combining realtime GTFS data with the static bus/ferry schedule',
       technologies: ['React Native', 'Expo Go', 'Express'],
-      image: '/images/reachHFX.png',
+      image: reachHFXImg,
       github:
-        'https://github.com/oxanuragofficial/bharat-webstudio',
+        'https://github.com/alexsroy/reach_hfx_frontent',
+      demo:
+        'https://reachhfx.vercel.app/',
     },
   ];
 
